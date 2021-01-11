@@ -1,0 +1,34 @@
+﻿{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/catalog",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 57164
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "CatalogAuthKey"
+      },
+      "UpstreamPathTemplate": "/catalog/",
+      "UpstreamHttpMethod": [ "Get", "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/authentication",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 58603
+        }
+      ],
+      "UpstreamPathTemplate": "/authentication/",
+      "UpstreamHttpMethod": [ "Get", "Post" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:58281"
+  }
+}
