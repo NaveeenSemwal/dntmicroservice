@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  authenticationservice:
+    image: ${DOCKER_REGISTRY-}authenticationservice
+    build:
+      context: .
+      dockerfile: AuthenticationService/Dockerfile
+
+  catalogservice:
+    image: ${DOCKER_REGISTRY-}catalogservice
+    build:
+      context: .
+      dockerfile: CatalogService/Dockerfile
+
+
+  shoppingwebui:
+    image: ${DOCKER_REGISTRY-}shoppingwebui
+    build:
+      context: .
+      dockerfile: ShoppingWebUI/Dockerfile
+
+
+  webapigateway:
+    image: ${DOCKER_REGISTRY-}webapigateway
+    build:
+      context: .
+      dockerfile: WebAPIGateway/Dockerfile
+
