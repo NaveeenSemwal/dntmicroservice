@@ -18,6 +18,15 @@ namespace CatalogService
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+            .ConfigureAppConfiguration((host, config) =>
+            {
+                // Was facing ENVIRONMENT issue while doing Db migrations.
+                // https://stackoverflow.com/questions/45881069/ef-core-don%C2%B4t-use-aspnetcore-environment-during-update-database
+
+                string env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+                config.AddJsonFile("appsettings.json");  // load common configurations
+                config.AddJsonFile($"appsettings.{env}.json");  // load env specfice configurations
+            })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
