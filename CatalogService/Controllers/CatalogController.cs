@@ -12,7 +12,6 @@ namespace CatalogService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class CatalogController : ControllerBase
     {
         private readonly DatabaseContext db;
