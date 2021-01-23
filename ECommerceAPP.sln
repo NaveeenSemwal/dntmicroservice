@@ -15,9 +15,14 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{4D4C2B51-6858-474D-844E-5004BB453D21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogServiceUnitTest", "Test\CatalogServiceUnitTest\CatalogServiceUnitTest.csproj", "{518903E6-D9DB-42F8-A102-E5CCE443700F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatalogServiceUnitTest", "Test\CatalogServiceUnitTest\CatalogServiceUnitTest.csproj", "{518903E6-D9DB-42F8-A102-E5CCE443700F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthenticationServiceUnitTest", "Test\AuthenticationServiceUnitTest\AuthenticationServiceUnitTest.csproj", "{5BE44553-2695-47B6-9D5F-4B0B559BC8D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthenticationServiceUnitTest", "Test\AuthenticationServiceUnitTest\AuthenticationServiceUnitTest.csproj", "{5BE44553-2695-47B6-9D5F-4B0B559BC8D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{143F40E6-B2F8-44B7-B62D-4CBD6253A56F}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\hp\Desktop\DockerFileExplaination.docx = C:\Users\hp\Desktop\DockerFileExplaination.docx
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,4 +1,5 @@
-﻿using CatalogService.Database;
+﻿using CatalogService.Abstract;
+using CatalogService.Database;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -14,15 +15,17 @@ namespace CatalogService.Controllers
     [ApiController]
     public class CatalogController : ControllerBase
     {
-        private readonly DatabaseContext db;
-        public CatalogController(DatabaseContext _db)
+        private ICatalogRepository _catalogRepository;
+
+        public CatalogController(ICatalogRepository catalogRepository)
         {
-            db = _db;
+            _catalogRepository = catalogRepository;
         }
 
+        [HttpGet]
         public IEnumerable<Product> GetProducts()
         {
-            return db.Products.ToList();
+            return _catalogRepository.GetProducts();
         }
 
         [HttpPost]
@@ -30,8 +33,7 @@ namespace CatalogService.Controllers
         {
             try
             {
-                db.Products.Add(model);
-                db.SaveChanges();
+                _catalogRepository.AddProduct(model);
                 return StatusCode(StatusCodes.Status201Created);
             }
             catch (Exception)

@@ -1,4 +1,6 @@
+using CatalogService.Abstract;
 using CatalogService.Database;
+using CatalogService.Implementation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -31,6 +33,8 @@ namespace CatalogService
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            services.AddTransient<ICatalogRepository, CatalogRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
